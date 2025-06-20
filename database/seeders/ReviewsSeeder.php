@@ -52,7 +52,7 @@ class ReviewsSeeder extends Seeder
                 'updated_at' => Carbon::parse('2024-03-13 13:00:00'),
             ],
             [
-                'user_id' => '1',
+                'user_id' => '5',
                 'product_id' => '3',
                 'rating' => '4',
                 'content' => 'Неплохой продукт, соответствует описанию.',
