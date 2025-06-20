@@ -20,6 +20,13 @@
                     <a class="nav-link {{ Request::is('contacts') ? 'active' : '' }}" href="{{ route('where') }}">Контакты</a>
                 </li>
                 <li class="nav-item nav-separator" style="margin-top: 10px;"></li>
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('calculator') ? 'active' : '' }}" href="{{ route('calculator') }}">Калькулятор</a>
+                </li>
+                @endauth
+            </ul>
+            <ul class="navbar-nav ms-auto" id="authNav">
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
@@ -28,13 +35,6 @@
                         <a class="nav-link" href="{{ route('login') }}">Вход</a>
                     </li>
                 @endguest
-                @auth
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('calculator') ? 'active' : '' }}" href="{{ route('calculator') }}">Калькулятор</a>
-                </li>
-                @endauth
-            </ul>
-            <ul class="navbar-nav ms-auto" id="authNav">
                  <li class="nav-item">
                   @auth
                         <li class="nav-item nav-separator" style="margin-top: 10px;"></li>
