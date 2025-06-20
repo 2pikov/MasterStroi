@@ -110,7 +110,7 @@ class ReviewsSeeder extends Seeder
                 'updated_at' => Carbon::parse('2024-05-23 10:00:00'),
             ],
             [
-                'user_id' => '1',
+                'user_id' => '4',
                 'product_id' => '5',
                 'rating' => '4',
                 'content' => 'В целом неплохо, но есть аналоги получше.',
@@ -172,7 +172,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 9
             [
-                'user_id' => '1',
+                'user_id' => '6',
                 'product_id' => '9',
                 'rating' => '4',
                 'content' => 'Соответствует заявленным характеристикам.',
@@ -232,7 +232,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 12
             [
-                'user_id' => '1',
+                'user_id' => '4',
                 'product_id' => '12',
                 'rating' => '4',
                 'content' => 'Неплохой товар, но можно найти дешевле.',
@@ -294,7 +294,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 16
             [
-                'user_id' => '1',
+                'user_id' => '6',
                 'product_id' => '16',
                 'rating' => '4',
                 'content' => 'Всё хорошо, но доставка долгая.',
@@ -354,7 +354,7 @@ class ReviewsSeeder extends Seeder
                 'updated_at' => Carbon::parse('2024-05-29 09:00:00'),
             ],
            [
-                'user_id' => '1',
+                'user_id' => '2',
                 'product_id' => '19',
                 'rating' => '4',
                 'content' => 'Хорошо, но дорого.',
@@ -416,7 +416,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 23
             [
-                'user_id' => '1',
+                'user_id' => '3',
                 'product_id' => '23',
                 'rating' => '5',
                 'content' => 'Супер, рекомендую всем.',
@@ -478,7 +478,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 27
             [
-                'user_id' => '1',
+                'user_id' => '5',
                 'product_id' => '27',
                 'rating' => '5',
                 'content' => 'Отличный товар, всем советую.',
@@ -540,7 +540,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 31
             [
-                'user_id' => '1',
+                'user_id' => '3',
                 'product_id' => '31',
                 'rating' => '5',
                 'content' => 'Отличный товар, рекомендую.',
@@ -600,7 +600,7 @@ class ReviewsSeeder extends Seeder
                 'updated_at' => Carbon::parse('2024-06-13 12:00:00'),
             ],
             [
-                'user_id' => '1',
+                'user_id' => '2',
                 'product_id' => '34',
                 'rating' => '3',
                 'content' => 'Средний товар, можно найти лучше.',
@@ -662,7 +662,7 @@ class ReviewsSeeder extends Seeder
         
             // Product 38
             [
-                'user_id' => '1',
+                'user_id' => '4',
                 'product_id' => '38',
                 'rating' => '3',
                 'content' => 'Средний товар, ничего особенного.',
