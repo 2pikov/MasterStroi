@@ -123,7 +123,7 @@
             <tbody>
                 @foreach ($products as $product)
                     <tr class="cart_raw">
-                        <td><img src="{{ Vite::asset('resources/media/images/') . $product->img }}" alt="" srcset=""
+                        <td><img src="{{ Vite::asset('resources/media/images/' . $product->img) }}" alt="" srcset=""
                                 width="100px"></td>
                         <td>{{ $product->title }}</td>
                         <td>{{ $product->product_type }}</td>

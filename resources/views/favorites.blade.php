@@ -28,7 +28,7 @@
                     @endif
                     
                     <a href="/product/{{ $favorite->product->id }}" style="text-decoration: none">
-                        <img src="{{ Vite::asset('resources/media/images/') . $favorite->product->img }}" 
+                        <img src="{{ Vite::asset('resources/media/images/' . $favorite->product->img) }}" 
                              alt="{{ $favorite->product->title }}" 
                              class="hit-image">
                         <h3 class="hit-title">{{ $favorite->product->title }}</h3>

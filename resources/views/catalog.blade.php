@@ -143,7 +143,7 @@
                                 <div class="product-badge badge-hit">Хит</div>
                             @endif
                             <a href="/product/{{ $product->id }}" class="product-link">
-                                <img src="{{ Vite::asset('resources/media/images/') . $product->img }}" alt="{{ $product->title }}" class="hit-image">
+                                <img src="{{ Vite::asset('resources/media/images/' . $product->img) }}" alt="{{ $product->title }}" class="hit-image">
                                 <h3 class="hit-title">{{ $product->title }}</h3>
                                 <div class="hit-info">
                                     <div class="hit-property">
