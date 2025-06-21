@@ -43,7 +43,7 @@ class CategoriesController extends Controller
         $category = DB::table('categories')->where('id', $request->id);
 
         $category->update([
-            'product_type' => $request->input('title'),
+            'product_type' => $request->input('product_type'),
         ]);
         return redirect()->route('admin.categories');
     }
