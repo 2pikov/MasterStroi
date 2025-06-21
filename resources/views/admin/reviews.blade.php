@@ -49,6 +49,7 @@
     padding: 28px 32px 20px 32px;
     position: relative;
     transition: box-shadow 0.2s;
+    font-family: 'Unbounded', sans-serif;
 }
 .admin-review-card:hover {
     box-shadow: 0 8px 32px rgba(0,0,0,0.13);

@@ -4,9 +4,10 @@
     <title>Подтверждение заказа</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Unbounded', sans-serif;
             line-height: 1.6;
             color: #333;
+            
         }
         .container {
             max-width: 600px;
@@ -37,10 +38,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Подтверждение заказа</h1>
+        <h1>Подтверждение заказа</h1>
         </div>
 
-        <p>Здравствуйте!</p>
+        <p>Здравствуйте! Вас беспокоит компания "МастерСтрой"!</p>
         
         <p>Для подтверждения вашего заказа, пожалуйста, введите следующий код на странице подтверждения:</p>
         
