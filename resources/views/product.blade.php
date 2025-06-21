@@ -552,13 +552,10 @@
                 .then(data => {
                     if (data && data.success) {
                         showToast('Товар успешно добавлен в корзину', 'success');
-                    } else {
-                        showToast(data.message || 'Произошла ошибка', 'error');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    showToast('Произошла ошибка при добавлении товара', 'error');
                 });
             });
         }

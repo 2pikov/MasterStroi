@@ -205,6 +205,122 @@
     </div>
 </div>
 
+<!-- Модальное окно для авторизации -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authModalLabel">Требуется авторизация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Для выполнения этого действия необходимо авторизоваться или зарегистрироваться.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ route('login') }}" class="btn btn-primary">Войти</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Стили для модального окна авторизации */
+.modal-content {
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0.75rem 1rem;
+}
+
+.modal-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 1rem;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Unbounded', sans-serif;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+    padding: 0.75rem 1rem;
+}
+
+.modal-footer .btn {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.modal-footer .btn-primary {
+    background-color: #d20d0d;
+    border-color: #d20d0d;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #b00b0b;
+    border-color: #b00b0b;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-close {
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Анимация появления */
+.modal.fade .modal-dialog {
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+/* Предотвращение сдвига страницы при открытии модального окна */
+body.modal-open {
+    padding-right: 0 !important;
+    overflow: hidden;
+}
+
+.modal-open .modal {
+    padding-right: 0 !important;
+}
+
+.modal {
+    padding-right: 0 !important;
+}
+</style>
+
 <script>
 function showNotification() {
     const notification = document.getElementById('cartNotification');
@@ -216,6 +332,11 @@ function showNotification() {
     }, 3000);
 }
 
+function showAuthModal() {
+    const authModal = new bootstrap.Modal(document.getElementById('authModal'));
+    authModal.show();
+}
+
 function addToCart(event, productId) {
     event.preventDefault();
     fetch('/add-to-cart/' + productId, {
@@ -225,13 +346,19 @@ function addToCart(event, productId) {
             'Accept': 'application/json'
         }
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.status === 401) {
+            showAuthModal();
+            return;
+        }
+        return response.json();
+    })
     .then(data => {
-        if (data.success) {
+        if (data && data.success) {
             showNotification();
             // Возможно, здесь нужно обновить отображение количества товара на карточке без перезагрузки страницы
             // Для этого потребуется найти элемент с количеством и обновить его текст
-        } else {
+        } else if (data && data.message) {
             alert(data.message);
         }
     })
@@ -254,7 +381,7 @@ function toggleFavorite(event, productId) {
     })
     .then(response => {
         if (response.status === 401) {
-            window.location.href = '/login';
+            showAuthModal();
             return;
         }
         return response.json();
@@ -281,7 +408,7 @@ function toggleCompare(event, productId) {
     })
     .then(response => {
         if (response.status === 401) {
-            window.location.href = '/login';
+            showAuthModal();
             return;
         }
         return response.json();

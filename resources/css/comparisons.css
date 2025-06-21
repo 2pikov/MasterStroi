@@ -31,6 +31,11 @@
     color: #001a34;
     border-bottom: 2px solid #e9ecef;
     position: relative;
+    overflow: visible;
+}
+
+.table th:first-child {
+    text-align: left;
 }
 
 .table td {
@@ -38,6 +43,7 @@
     text-align: center;
     border-bottom: 1px solid #e9ecef;
     color: #495057;
+    border-radius: 8px;
 }
 
 .table tr:last-child td {
@@ -50,22 +56,44 @@
     border-radius: 8px;
 }
 
+.product-link {
+    color: #d20d0d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.product-link:hover {
+    color: #a00a0a;
+}
+
 .remove-comparison {
     position: absolute;
-    top: 5px;
+    top: 15px;
     right: 5px;
-    background: none;
-    border: none;
-    color: #dc3545;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 5px;
+    background-color: #e53e3e;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
     line-height: 1;
-    transition: color 0.3s;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 10;
 }
 
 .remove-comparison:hover {
-    color: #c82333;
+    transform: scale(1.1);
+    background-color: #c53030;
 }
 
 .alert {

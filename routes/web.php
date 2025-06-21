@@ -76,6 +76,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/favorites/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
     Route::get('/comparisons', [ComparisonController::class, 'index'])->name('comparisons.index');
     Route::post('/comparisons/toggle', [ComparisonController::class, 'toggle'])->name('comparisons.toggle');
+    Route::post('/comparisons/clear-all', [ComparisonController::class, 'clearAll'])->name('comparisons.clearAll');
     Route::delete('/comparisons/toggle', [ComparisonController::class, 'toggle']);
 
     // Калькулятор

@@ -8,6 +8,11 @@ use App\Models\Product;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         $cartTable = DB::table('cart')
