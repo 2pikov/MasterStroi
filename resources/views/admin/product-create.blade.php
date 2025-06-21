@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<div class="admin-container">
     <div class="container">
+        <h1>Добавить новый товар</h1>
         <div class="auth-container">
             <form action="/product-create" method="POST">
                 @method('post')
@@ -70,8 +72,9 @@
                         @endforeach
                     </select>
                 </div>
-                <input type="submit" value="Подтвердить" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">Создать товар</button>
             </form>
         </div>
     </div>
+</div>
 @endsection

@@ -24,13 +24,13 @@
             <a href="{{ route('profile.reviews') }}" class="menu-link">
                 <span>Мои отзывы</span>
             </a>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="menu-link logout">
-                    <span>Выйти</span>
-                </button>
-            </form>
         </nav>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="menu-link logout">
+                <span>Выйти</span>
+            </button>
+        </form>
     </div>
 
     <div class="profile-content">

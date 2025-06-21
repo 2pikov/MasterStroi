@@ -1,7 +1,9 @@
 @extends('layouts.app')
+
 @section('content')
-<div class="container" style="max-width:900px; margin:40px auto;">
-    <h1 style="margin-bottom:32px;">Модерация отзывов</h1>
+<div class="admin-container">
+<div class="container reviews-moderation">
+    <h1 class="mb-4">Модерация отзывов</h1>
     <div class="admin-reviews-list">
         @forelse($reviews as $review)
             <div class="admin-review-card">
@@ -32,6 +34,7 @@
             <div class="alert alert-info">Нет отзывов для модерации</div>
         @endforelse
     </div>
+</div>
 </div>
 <style>
 .admin-reviews-list {

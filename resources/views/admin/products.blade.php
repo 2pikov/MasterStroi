@@ -107,40 +107,42 @@
     }
 }
 </style>
-<div class="container">
-    <div class="table-responsive">
-        <table class="cart_table container">
-            <thead>
-                <tr>
-                    <th>Изображение</th>
-                    <th>Название</th>
-                    <th>Категория</th>
-                    <th>Количество</th>
-                    <th>Цена</th>
-                    <th>Действия</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($products as $product)
-                    <tr class="cart_raw">
-                        <td><img src="{{ Vite::asset('resources/media/images/' . $product->img) }}" alt="" srcset=""
-                                width="100px"></td>
-                        <td>{{ $product->title }}</td>
-                        <td>{{ $product->product_type }}</td>
-                        <td>{{ $product->qty }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>
-                            <a href="/product-edit/{{ $product->id }}" class="btn btn-primary">Ред.</a>
-                            <form action="/product-delete/{{ $product->id }}" method="POST" style="display:inline; margin:0;">
-                                @method('delete')
-                                @csrf
-                                <input type="submit" class="btn btn-danger" value="Удал." style="min-width:auto;">
-                            </form>
-                        </td>
+<div class="admin-container">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="cart_table container">
+                <thead>
+                    <tr>
+                        <th>Изображение</th>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Действия</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($products as $product)
+                        <tr class="cart_raw">
+                            <td><img src="{{ Vite::asset('resources/media/images/' . $product->img) }}" alt="" srcset=""
+                                    width="100px"></td>
+                            <td>{{ $product->title }}</td>
+                            <td>{{ $product->product_type }}</td>
+                            <td>{{ $product->qty }}</td>
+                            <td>{{ $product->price }}</td>
+                            <td>
+                                <a href="/product-edit/{{ $product->id }}" class="btn btn-primary">Ред.</a>
+                                <form action="/product-delete/{{ $product->id }}" method="POST" style="display:inline; margin:0;">
+                                    @method('delete')
+                                    @csrf
+                                    <input type="submit" class="btn btn-danger" value="Удал." style="min-width:auto;">
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 @endsection

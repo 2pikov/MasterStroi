@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container admin-orders">
+<div class="admin-container">
+<div class="container orders-container">
     <div class="admin-header">
         <h1>Управление заказами</h1>
         
@@ -106,6 +107,7 @@
             </div>
         @endforelse
     </div>
+</div>
 </div>
 
 <style>

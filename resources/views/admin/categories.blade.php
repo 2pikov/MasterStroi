@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="admin-container">
     <div class="container">
         <h1>Категории</h1>
         <a href="/category-create" class="btn btn-primary mb-3">Создать новую категорию</a>
@@ -32,4 +33,5 @@
             </table>
         </div>
     </div>
+</div>
 @endsection

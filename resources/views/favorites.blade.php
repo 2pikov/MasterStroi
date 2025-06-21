@@ -128,6 +128,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
+    justify-items: center;
 }
 
 .no-favorites {
@@ -167,9 +168,17 @@
     }
 }
 
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
 @media (max-width: 576px) {
     .products-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 }
 </style>

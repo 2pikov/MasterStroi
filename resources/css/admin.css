@@ -1,0 +1,15 @@
+.admin-container {
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-container {
+        margin-top: 20px;
+    }
+} 
