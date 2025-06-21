@@ -313,3 +313,43 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+@media (max-width: 992px) {
+    .cart-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        position: static;
+        top: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .shopping-cart {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .cart-item {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart-item-title {
+        font-size: 16px;
+    }
+
+    .item-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}

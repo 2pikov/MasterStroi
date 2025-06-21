@@ -21,7 +21,7 @@ class CartController extends Controller
         $goodCart = [];
         foreach ($cartTable as $cartItem) {
             $product = DB::table('products')
-                ->select('title', 'price', 'qty')
+                ->select('title', 'price', 'qty', 'img')
                 ->where('id', $cartItem->product_id)
                 ->first();
             array_push(
@@ -31,7 +31,8 @@ class CartController extends Controller
                     'title' => $product->title,
                     'price' => $product->price,
                     'qty' => $cartItem->quantity,
-                    'limit' => $product->qty
+                    'limit' => $product->qty,
+                    'img' => $product->img
                 ]
             );
         }

@@ -16,6 +16,10 @@
                                 <input type="checkbox" class="select-item">
                             </div>
 
+                            <div class="item-image">
+                                <img src="{{ Vite::asset('resources/media/images/' . $item->img) }}" alt="{{ $item->title }}">
+                            </div>
+
                             <div class="cart-item-info">
                                 <div class="item-header">
                                     <div class="item-title-block">
