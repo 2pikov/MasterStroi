@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index($id)
     {
         $product = Product::with(['reviews' => function($query) {
-            $query->with('user')->latest();
+            $query->where('is_approved', 1)->with('user')->latest();
         }])->findOrFail($id);
         
         return view('product', compact('product'));

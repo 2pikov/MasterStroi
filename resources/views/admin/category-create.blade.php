@@ -3,8 +3,10 @@
 @section('content')
     <div class="admin-container">
         <div class="container">
-            <h1>Создать категорию</h1>
-            <form action="/category-create" method="POST">
+            <div class="admin-header">
+                <h1>Создать категорию</h1>
+            </div>
+            <form action="/category-create" method="POST" class="admin-form">
                 @csrf
                 <div class="mb-3">
                     <label for="product_type" class="form-label">Название типа продукта</label>

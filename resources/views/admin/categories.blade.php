@@ -3,10 +3,12 @@
 @section('content')
 <div class="admin-container">
     <div class="container">
-        <h1>Категории</h1>
-        <a href="/category-create" class="btn btn-primary mb-3">Создать новую категорию</a>
+        <h1 style="font-family: 'Unbounded', sans-serif;">Категории</h1>
+        <a href="/category-create" class="btn btn-primary mb-3" style="font-family: 'Unbounded', sans-serif;">
+            Создать новую категорию
+        </a>
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped" style="font-family: 'Unbounded', sans-serif;">
                 <thead>
                     <tr>
                         <th>ID</th>

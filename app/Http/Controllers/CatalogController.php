@@ -106,7 +106,11 @@ class CatalogController extends Controller
         $toolCategories = [3]; // ID категории "Инструменты"
 
         // Применяем фильтры
-        $query = Product::query();
+        $query = Product::withCount(['reviews' => function ($query) {
+            $query->where('is_approved', 1);
+        }])->withAvg(['reviews' => function ($query) {
+            $query->where('is_approved', 1);
+        }], 'rating');
 
         if ($category = $request->get('category')) {
             $query->where('product_type', $category);
@@ -164,12 +168,14 @@ class CatalogController extends Controller
         $categories = Category::all();
 
         // Вычисляем топ-2 товара по рейтингу для каждой категории
-        $allProducts = Product::with('reviews')->get();
+        $allProducts = Product::with(['reviews' => function ($query) {
+            $query->where('is_approved', 1);
+        }])->get();
         $hitsByCategory = $allProducts
             ->groupBy('product_type')
             ->map(function($group) {
                 return $group->sortByDesc(function($product) {
-                    return $product->reviews->where('is_approved', true)->avg('rating') ?? 0;
+                    return $product->reviews->avg('rating') ?? 0;
                 })->take(2)->pluck('id')->toArray();
             })->toArray();
 

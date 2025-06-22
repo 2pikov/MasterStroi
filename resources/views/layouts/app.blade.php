@@ -20,8 +20,8 @@
         <link href="{{ Vite::asset('resources/css/notifications.css') }}" rel="stylesheet">
         @stack('styles')
     </head>
-    <body>
-        <div>
+    <body class="d-flex flex-column min-vh-100">
+        <div class="flex-grow-1">
             @include('layouts.obloz')
             @include('layouts.navigation')
             

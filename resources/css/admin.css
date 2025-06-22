@@ -1,5 +1,267 @@
 .admin-container {
-    margin-top: 60px;
+    margin-top: 20px;
+    font-family: 'Unbounded', sans-serif;
+}
+
+.admin-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.admin-header h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-link {
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #666;
+    background: #f5f5f5;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: 'Unbounded', sans-serif;
+}
+
+.filter-link:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.filter-link.active {
+    background: #dc3545;
+    color: white;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    font-family: 'Unbounded', sans-serif;
+    margin-bottom: 20px;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.order-header {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.order-info h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.order-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.order-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+}
+
+.status-новый {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.status-подтвержден {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-отменен {
+    background-color: #eceff1;
+    color: #37474f;
+}
+
+.customer-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.customer-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.order-items {
+    padding: 20px;
+}
+
+.order-items h5 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.order-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.item-title {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.item-quantity {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+}
+
+.order-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #f0f0f0;
+    border-radius: 0 0 12px 12px;
+}
+
+.order-total {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #777;
+    background: #fcfcfc;
+    border-radius: 12px;
+}
+
+.orders-container h1,
+.orders-container h2 {
+    font-family: 'Unbounded', sans-serif !important;
+}
+
+.admin-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.admin-form .form-label {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.admin-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+}
+
+.admin-form .form-control:focus {
+    border-color: #D20D0D;
+    box-shadow: 0 0 0 3px rgba(210, 13, 13, 0.1);
+}
+
+.admin-form .btn-success {
+    background-color: #D20D0D;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Unbounded', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.admin-form .btn-success:hover {
+    background-color: #b30000;
+}
+
+/* Стили для уведомлений в админ-панели */
+.admin-container .alert {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    align-self: flex-start;
+}
+
+.admin-container .alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left-color: #4caf50;
+}
+
+.admin-container .alert-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left-color: #f44336;
 }
 
 @media (max-width: 768px) {

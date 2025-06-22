@@ -12,9 +12,13 @@
                         <span class="admin-review-user">{{ $review->user->name }}</span>
                         <span class="admin-review-date">{{ $review->created_at->format('d.m.Y') }}</span>
                     </div>
-                    <span class="admin-review-status {{ $review->is_approved ? 'approved' : 'pending' }}">
-                        {{ $review->is_approved ? 'Подтверждён' : 'Ожидает модерации' }}
-                    </span>
+                    @if ($review->is_approved == 1)
+                        <span class="admin-review-status approved">Подтверждён</span>
+                    @elseif ($review->is_approved == 0)
+                        <span class="admin-review-status pending">Ожидает модерации</span>
+                    @else
+                        <span class="admin-review-status rejected">Отклонено</span>
+                    @endif
                 </div>
                 <div class="admin-review-product">Товар: <b>{{ $review->product->title ?? 'Товар удалён' }}</b></div>
                 <div class="admin-review-rating">
@@ -23,11 +27,18 @@
                     @endfor
                 </div>
                 <div class="admin-review-content">{{ $review->content }}</div>
-                @if(!$review->is_approved)
-                <form action="{{ route('admin.reviews.approve', $review->id) }}" method="POST" class="admin-review-action">
-                    @csrf
-                    <button type="submit" class="btn btn-success">Подтвердить</button>
-                </form>
+                @if($review->is_approved == 0)
+                <div class="admin-review-actions">
+                    <form action="{{ route('admin.reviews.approve', $review->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-success">Подтвердить</button>
+                    </form>
+                    <form action="{{ route('admin.reviews.reject', $review->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Отклонить</button>
+                    </form>
+                </div>
                 @endif
             </div>
         @empty
@@ -84,6 +95,10 @@
     background: #fff3cd;
     color: #856404;
 }
+.admin-review-status.rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
 .admin-review-product {
     font-size: 1.05rem;
     color: #555;
@@ -100,21 +115,32 @@
     border-radius: 8px;
     padding: 12px 16px;
 }
-.admin-review-action {
-    text-align: right;
+.admin-review-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
-.btn-success {
-    background: #198754;
+.btn {
     border: none;
     padding: 8px 24px;
     border-radius: 6px;
     color: #fff;
     font-weight: 600;
     font-size: 1rem;
+    cursor: pointer;
     transition: background 0.2s;
+}
+.btn-success {
+    background: #198754;
 }
 .btn-success:hover {
     background: #146c43;
+}
+.btn-danger {
+    background: #dc3545;
+}
+.btn-danger:hover {
+    background: #c82333;
 }
 @media (max-width: 700px) {
     .admin-review-card {

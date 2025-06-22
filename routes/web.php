@@ -112,6 +112,7 @@ Route::middleware(['auth', 'is-admin'])->group(function () {
     // Админка: модерация отзывов
     Route::get('/admin/reviews', [ReviewModerationController::class, 'index'])->name('admin.reviews');
     Route::post('/admin/reviews/{id}/approve', [ReviewModerationController::class, 'approve'])->name('admin.reviews.approve');
+    Route::delete('/admin/reviews/{id}/reject', [ReviewModerationController::class, 'reject'])->name('admin.reviews.reject');
 });
 
 require __DIR__ . '/auth.php';

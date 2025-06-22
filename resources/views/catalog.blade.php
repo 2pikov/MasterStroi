@@ -165,8 +165,7 @@
                                 <div class="product-rating">
                                     <div class="rating-stars">
                                         @php
-                                            $approvedReviews = $product->reviews->where('is_approved', true);
-                                            $rating = $approvedReviews->avg('rating') ?? 0;
+                                            $rating = $product->reviews_avg_rating ?? 0;
                                             $fullStars = floor($rating);
                                             $hasHalfStar = $rating - $fullStars >= 0.5;
                                         @endphp
@@ -180,7 +179,7 @@
                                             @endif
                                         @endfor
                                     </div>
-                                    <span class="rating-count">({{ $approvedReviews->count() }})</span>
+                                    <span class="rating-count">({{ $product->reviews_count }})</span>
                                 </div>
                                 <div class="hit-price">{{ number_format($product->price, 0, ',', ' ') }} ₽</div>
                             </a>
