@@ -5,7 +5,7 @@
         <h1>Редактировать товар</h1>
         <div class="form-scroll-wrapper">
             <form action="/product-update/{{$product->id}}" method="POST">
-                @method('put')
+                @method('patch')
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Название</label>

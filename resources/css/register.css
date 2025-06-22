@@ -185,6 +185,19 @@ body {
         font-size: 1.1em;
         top: -1.1em;
     }
+    .auth-action-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .auth-link {
+        order: 2;
+        text-align: center;
+        margin-top: 0;
+    }
+    .auth-button {
+        order: 1;
+    }
 }
 
 @keyframes fadeInUp {
